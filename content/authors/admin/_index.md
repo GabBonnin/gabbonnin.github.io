@@ -1,17 +1,17 @@
 ---
 # Display name
-title: 吳健雄
+title: Gabriel Bonnin, PhD
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: ''
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Gabriel
+last_name: Bonnin
 
 # Status emoji
 status:
-  icon: ☕️
+  icon: ''
 
 # Is this the primary user of the site?
 superuser: true
@@ -20,92 +20,69 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: Postdoctoral Researcher
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: OpenAI
-    url: https://openai.com/
+  - name: Bochum-Marburg site of the German Center for Mental Health (DZPG)
+    url: https://dzpg.org/
+  - name: Ruhr University Bochum
+    url: https://www.ruhr-uni-bochum.de/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'mailto:gabriel.bonnin@rub.de'
     label: E-mail Me
-  - icon: brands/x
-    url: https://twitter.com/GetResearchDev
-  - icon: brands/instagram
-    url: https://www.instagram.com/
-  - icon: brands/github
-    url: https://github.com/gcushen
   - icon: brands/linkedin
-    url: https://www.linkedin.com/
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/
+    url: https://www.linkedin.com/in/gabriel-bonnin
+  - icon: academicons/researchgate
+    url: https://www.researchgate.net/profile/Gabriel-Bonnin
   - icon: academicons/orcid
-    url: https://orcid.org/
+    url: https://orcid.org/0000-0002-7084-8774
+  - icon: globe
+    url: https://fbz-bochum.de/person/gabriel-bonnin
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Diagnostics of Mental Disorders
+  - Long-term Effectiveness of Psychotherapy
+  - Psychotherapy Research in Naturalistic Settings
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: PhD in Clinical Psychology
+    institution: Ruhr University Bochum
+    date_start: 2020-01-01
+    date_end: 2024-01-01
     summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+      Grade: summa cum laude
+      Thesis: _"Implicit and explicit categorization processes in clinical psychology: Evidence-based diagnostics, optimal cut-points, and therapists’ prototypes"_
+  - area: MSc in Clinical Psychology
+    institution: Ruhr University Bochum
+    date_start: 2016-10-01
+    date_end: 2018-09-30
     summary: |
-      GPA: 3.8/4.0
-
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+      Thesis: _"Neural correlates of in-situ exposure in panic disorder with agoraphobia"_
+  - area: BSc in Psychology
+    institution: MLU Halle-Wittenberg
+    date_start: 2012-10-01
+    date_end: 2015-09-30
     summary: |
-      GPA: 3.4/4.0
-      
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      Thesis: _"Physical activity and mood experience in daily life"_
 work:
-  - position: Director of Cloud Infrastructure
-    company_name: GenCoin
-    company_url: ''
-    company_logo: ''
-    date_start: 2021-01-01
-    date_end: ''
-    summary: |2-
-      Responsibilities include:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - position: Backend Software Engineer
-    company_name: X
-    company_url: ''
-    company_logo: ''
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - position: Research Associate
+    company_name: DZPG, Ruhr University Bochum
+    date_start: 2023-01-01
     summary: |
-      Responsibilities include:
-      - Migrated infrastructure to a new data center
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      - Lead of the psychotherapy research group at the Bochum-Marburg site.
+      - Conducting multi-centered research on long-term effects of psychotherapy.
+      - Developing infrastructure for harmonized data collection in routine psychotherapeutic care.
+  - position: Research Assistant
+    company_name: Ruhr University Bochum
+    date_start: 2020-01-01
+    date_end: 2023-12-31
+    summary: |
+      Research at the Chairs of Clinical Child and Adolescent Psychology and Clinical Psychology and Psychotherapy.
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
@@ -154,33 +131,30 @@ languages:
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
-  - title: Neural Networks and Deep Learning
-    url: https://www.coursera.org/learn/neural-networks-deep-learning
-    date: '2023-11-25'
-    awarder: Coursera
-    icon: coursera
-    summary: |
-      I studied the foundational concept of neural networks and deep learning. By the end, I was familiar with the significant technological trends driving the rise of deep learning; build, train, and apply fully connected deep neural networks; implement efficient (vectorized) neural networks; identify key parameters in a neural network’s architecture; and apply deep learning to your own applications.
-  - title: Blockchain Fundamentals
-    url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-    date: '2023-07-01'
-    awarder: edX
-    icon: edx
-    summary: |
-      Learned:
-      - Synthesize your own blockchain solutions
-      - Gain an in-depth understanding of the specific mechanics of Bitcoin
-      - Understand Bitcoin’s real-life applications and learn how to attack and destroy Bitcoin, Ethereum, smart contracts and Dapps, and alternatives to Bitcoin’s Proof-of-Work consensus algorithm
-  - title: 'Object-Oriented Programming in R'
-    url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
-    certificate_url: https://www.datacamp.com
-    date: '2023-01-21'
-    awarder: datacamp
-    icon: datacamp
-    summary: |
-      Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
+  - title: Travel Grant, FBZ Scientist-Practitioner Program
+    date: 2022-01-01
+    awarder: FBZ Bochum
+    summary: Received €1,500 for international travel.
+  - title: Seed Funding for Research on Therapeutic Change Processes
+    date: 2024-01-01
+    awarder: Institute for Health and Development, RUB
+    summary: €2,000 as Co-PI for idiographic research on loneliness and well-being.
+  - title: DZPG ECS Independence Grant
+    date: 2024-01-01
+    awarder: DZPG
+    summary: €1,500 for project on speech analysis in psychotherapy (Co-PI).
+  - title: DZPG VISIONS Grant
+    date: 2025-01-01
+    awarder: DZPG
+    summary: €135,056 for Bochum-Marburg site (PI), part of a €294,194 multi-center project.
+  - title: Gateway Fellowship
+    date: 2025-01-01
+    awarder: RUB Research School
+    summary:
 ---
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Gabriel Bonnin is a postdoctoral researcher at the Research and Treatment Center for Mental Health (FBZ) at Ruhr University Bochum, where he is contributing to the establishment of the psychotherapy research group at the German Center for Mental Health (DZPG).
+
+His research focuses on the diagnosis of mental disorders and psychotherapy. He is particularly engaged in multi-center studies investigating the long-term effects of psychotherapy, as well as developing infrastructure for standardized data collection in routine psychotherapeutic care.
