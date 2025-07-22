@@ -41,8 +41,6 @@ profiles:
     url: https://www.researchgate.net/profile/Gabriel-Bonnin
   - icon: academicons/orcid
     url: https://orcid.org/0000-0002-7084-8774
-  - icon: globe
-    url: https://fbz-bochum.de/person/gabriel-bonnin
 
 interests:
   - Diagnostics of Mental Disorders
@@ -82,79 +80,32 @@ work:
     date_start: 2020-01-01
     date_end: 2023-12-31
     summary: |
-      Research at the Chairs of Clinical Child and Adolescent Psychology and Clinical Psychology and Psychotherapy.
-
-# Skills
-# Add your own SVG icons to `assets/media/icons/`
-skills:
-  - name: Technical Skills
-    items:
-      - name: Python
-        description: ''
-        percent: 80
-        icon: code-bracket
-      - name: Data Science
-        description: ''
-        percent: 100
-        icon: chart-bar
-      - name: SQL
-        description: ''
-        percent: 40
-        icon: circle-stack
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: Hiking
-        description: ''
-        percent: 60
-        icon: person-simple-walk
-      - name: Cats
-        description: ''
-        percent: 100
-        icon: cat
-      - name: Photography
-        description: ''
-        percent: 80
-        icon: camera
-
-languages:
-  - name: English
-    percent: 100
-  - name: Chinese
-    percent: 75
-  - name: Portuguese
-    percent: 25
+      Research at the Chairs of Clinical Child and Adolescent Psychology (Prof. Dr. Silvia Schneider) and Clinical Psychology and Psychotherapy (Prof. Dr. Jürgen Margraf).
 
 # Awards.
 #   Add/remove as many awards below as you like.
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
-  - title: Travel Grant, FBZ Scientist-Practitioner Program
-    date: 2022-01-01
+  - title: Travel Grant
+    date: 2022
     awarder: FBZ Bochum
-    summary: Received €1,500 for international travel.
   - title: Seed Funding for Research on Therapeutic Change Processes
-    date: 2024-01-01
+    date: 2024
     awarder: Institute for Health and Development, RUB
-    summary: €2,000 as Co-PI for idiographic research on loneliness and well-being.
-  - title: DZPG ECS Independence Grant
-    date: 2024-01-01
-    awarder: DZPG
-    summary: €1,500 for project on speech analysis in psychotherapy (Co-PI).
+    summary: Co-PI for idiographic research on loneliness and well-being.
   - title: DZPG VISIONS Grant
-    date: 2025-01-01
+    date: 2025
     awarder: DZPG
-    summary: €135,056 for Bochum-Marburg site (PI), part of a €294,194 multi-center project.
+    summary: Co-PI in a multi-center project on speech-analysis in routine psychotherapeutic care.
   - title: Gateway Fellowship
-    date: 2025-01-01
+    date: 2025
     awarder: RUB Research School
-    summary:
+    summary: Scholarship for a nine-month international research stay at a host institution of choice.
 ---
 
 ## About Me
 
-Gabriel Bonnin is a postdoctoral researcher at the Research and Treatment Center for Mental Health (FBZ) at Ruhr University Bochum, where he is contributing to the establishment of the psychotherapy research group at the German Center for Mental Health (DZPG).
-
-His research focuses on the diagnosis of mental disorders and psychotherapy. He is particularly engaged in multi-center studies investigating the long-term effects of psychotherapy, as well as developing infrastructure for standardized data collection in routine psychotherapeutic care.
+I am a postdoc at the Bochum-Marburg site of the German Center for Mental Health Research (DZPG), based at Ruhr University Bochum, where I lead the psychotherapy research group. Our work centers on multi-center studies exploring the long-term effects of psychotherapy and developing infrastructure for standardized data collection in routine psychotherapeutic care.
+My broader research interests lie in psychological assessment and psychotherapy processes. More recently, I have become increasingly engaged with natural language processing as a tool for assessing mental health and analyzing therapeutic interactions. 
+In addition to my research activities, I am a licensed clinical psychologist and cognitive behavioral therapist.
