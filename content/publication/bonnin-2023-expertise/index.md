@@ -21,9 +21,11 @@ publication_types:
 publication: "Robert Koch Institut (RKI)"
 publication_short: ''
 
-abstract: Clinical diagnostic interviews are considered the gold standard for assessing mental disorders and are thus a key tool in epidemiological research on mental health. However, due to their complexity and resource intensity, they pose specific challenges when applied in large-scale population-based studies. In mid-2023, this expert report was commissioned by the Robert Koch Institute (RKI) to provide a systematic overview of internationally used clinical interviews and to evaluate their suitability for mental health surveillance in German-speaking populations — with a particular focus on their potential for open-source digital implementation.
-This report is structured in three parts: (1) criteria and requirements for evaluating clinical diagnostic interviews, (2) a systematic overview of relevant instruments, and (3) practical recommendations for implementing mental health surveillance.
-The aim is to identify interviews that enable valid, feasible, and widely accepted assessment of mental disorders — especially in the context of large-scale, resource-efficient, and future-ready population studies.
+abstract: |
+  Clinical diagnostic interviews are considered the gold standard for assessing mental disorders and are thus a key tool in epidemiological research on mental health. However, due to their complexity and resource intensity, they pose specific challenges when applied in large-scale population-based studies. In mid-2023, this expert report was commissioned by the Robert Koch Institute (RKI) to provide a systematic overview of internationally used clinical interviews and to evaluate their suitability for mental health surveillance in German-speaking populations — with a particular focus on their potential for open-source digital implementation.  
+  This report is structured in three parts: (1) criteria and requirements for evaluating clinical diagnostic interviews, (2) a systematic overview of relevant instruments, and (3) practical recommendations for implementing mental health surveillance.  
+  The aim is to identify interviews that enable valid, feasible, and widely accepted assessment of mental disorders — especially in the context of large-scale, resource-efficient, and future-ready population studies.
+
 
 # Summary. An optional shortened abstract.
 summary: ''
