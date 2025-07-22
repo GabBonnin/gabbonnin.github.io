@@ -22,4 +22,29 @@ publication_types:
 - article-journal
 publication: '*Journal of Medical Internet Research*'
 doi: 10.2196/54176
+
+links:
+- name: Preprint
+  url: 'https://doi.org/10.23668/psycharchives.12494'
+url_pdf: 'https://www.jmir.org/2024/1/e54176/PDF'
+url_code: 'https://doi.org/10.23668/psycharchives.12368'
+url_dataset: 'https://doi.org/10.23668/psycharchives.12367'
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
+
+tags:
+- Diagnosis of Mental Disorders
+- Diagnostic Interviews
+- Therapist training
+featured: false
+
+# Associated Projects (optional).
+#   Associate this publication with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `internal-project` references `content/project/internal-project/index.md`.
+#   Otherwise, set `projects: []`.
+projects: []
 ---
