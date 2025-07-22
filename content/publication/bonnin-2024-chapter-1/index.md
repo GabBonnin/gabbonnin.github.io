@@ -10,4 +10,7 @@ publication_types:
 - chapter
 publication: '*Klinische Psychologie und Psychotherapie: Ein verfahrensübergreifendes
   Lehr- und Lernbuch*'
+tags:
+- Diagnosis of Mental Disorders
+- Diagnostic Interviews
 ---
