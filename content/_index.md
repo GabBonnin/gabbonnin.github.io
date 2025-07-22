@@ -24,7 +24,7 @@ sections:
         color: black
         image:
           # Add your image background to `assets/media/`.
-          filename: wes-hicks-4PWqHpxhvQM-unsplash.jpg
+          filename: wes-hicks-3p79U8dlNi8-unsplash.jpg
           filters:
             brightness: 1.0
           size: cover
