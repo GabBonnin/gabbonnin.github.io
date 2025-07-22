@@ -41,14 +41,4 @@ sections:
         exclude_featured: false
     design:
       view: citation
-  - block: collection
-    id: talks
-    content:
-      title: Recent & Upcoming Presentations
-      filters:
-        folders:
-          - event
-    design:
-      view: article-grid
-      columns: 1
 ---
