@@ -107,7 +107,5 @@ awards:
 ## About Me
 
 I am a postdoc at the Bochum-Marburg site of the German Center for Mental Health Research (DZPG), based at Ruhr University Bochum, where I lead the psychotherapy research group. Our work centers on multi-center studies exploring the long-term effects of psychotherapy and developing infrastructure for standardized data collection in routine psychotherapeutic care.
-
 My broader research interests lie in psychological assessment and psychotherapy processes. More recently, I have become increasingly engaged with natural language processing as a tool for assessing mental health and analyzing therapeutic interactions. 
-
 In addition to my research activities, I am a licensed clinical psychologist and cognitive behavioral therapist.
