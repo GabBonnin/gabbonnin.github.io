@@ -31,6 +31,7 @@ sections:
           position: center
           parallax: false
   - block: collection
+    id: recent-publications
     content:
       title: Recent Publications
       text: ""
