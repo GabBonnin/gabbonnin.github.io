@@ -50,21 +50,18 @@ interests:
 education:
   - area: PhD in Clinical Psychology
     institution: Ruhr University Bochum
-    date_start: 2020-01-01
-    date_end: 2024-01-01
+    year: 2024
     summary: |
       Grade: summa cum laude
       Thesis: _"Implicit and explicit categorization processes in clinical psychology: Evidence-based diagnostics, optimal cut-points, and therapists’ prototypes"_
   - area: MSc in Clinical Psychology
     institution: Ruhr University Bochum
-    date_start: 2016-10-01
-    date_end: 2018-09-30
+    year: 2018
     summary: |
       Thesis: _"Neural correlates of in-situ exposure in panic disorder with agoraphobia"_
   - area: BSc in Psychology
     institution: MLU Halle-Wittenberg
-    date_start: 2012-10-01
-    date_end: 2015-09-30
+    year: 2015
     summary: |
       Thesis: _"Physical activity and mood experience in daily life"_
 work:
