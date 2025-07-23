@@ -62,7 +62,8 @@ for work in data.get("group", []):
         if name:
             authors.append(name)
 
-    journal = work_details.get("journal-title", {}).get("value", "")
+    journal_data = work_details.get("journal-title")
+    journal = journal_data.get("value") if journal_data else ""
 
     # Generate markdown
     md_content = f"""---
