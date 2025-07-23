@@ -88,24 +88,24 @@ work:
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
   - title: Travel Grant
-    date: 2022
+    date: "2022"
     awarder: FBZ Bochum
   - title: Seed Funding for Research on Therapeutic Change Processes
-    date: 2024
+    date: "2024"
     awarder: Institute for Health and Development, RUB
     summary: Co-PI for idiographic research on loneliness and well-being.
   - title: DZPG VISIONS Grant
-    date: 2025
+    date: "2025"
     awarder: DZPG
     summary: Co-PI in a multi-center project on speech-analysis in routine psychotherapeutic care.
   - title: Gateway Fellowship
-    date: 2025
+    date: "2025"
     awarder: RUB Research School
     summary: Scholarship for a nine-month international research stay at a host institution of choice.
 ---
 
 ## About Me
 
-I am a postdoc at the Bochum-Marburg site of the German Center for Mental Health Research (DZPG), based at Ruhr University Bochum, where I lead the psychotherapy research group. Our work centers on multi-center studies exploring the long-term effects of psychotherapy and developing infrastructure for standardized data collection in routine psychotherapeutic care.
+I am a postdoc at the Bochum-Marburg site of the German Center for Mental Health (DZPG), based at Ruhr University Bochum, where I lead the psychotherapy research group. Our work centers on multi-center studies exploring the long-term effects of psychotherapy and developing infrastructure for standardized data collection in routine psychotherapeutic care.
 My broader research interests lie in psychological assessment and psychotherapy processes. More recently, I have become increasingly engaged with natural language processing as a tool for assessing mental health and analyzing therapeutic interactions. 
 In addition to my research activities, I am a licensed clinical psychologist and cognitive behavioral therapist.
