@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+<article class="pub">
+
+  <header>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.publication }}
+      <p><strong>{{ . }}</strong></p>
+    {{ end }}
+    {{ with .Params.publication_type_name }}
+      <p class="pub-type">{{ . }}</p>
+    {{ end }}
+  </header>
+
+  {{ with .Content }}
+    <div class="pub-abstract">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  <!-- Copy BibTeX Button -->
+  {{ if .Params.bibtex }}
+  <div>
+    <button onclick="copyBibtex()">Copy BibTeX</button>
+    <pre id="bibtex-text" style="display:none;">{{ .Params.bibtex | safeHTML }}</pre>
+  </div>
+
+  <script>
+  function copyBibtex() {
+    const bibtex = document.getElementById('bibtex-text').innerText.replace(/\\n/g, '\n');
+    navigator.clipboard.writeText(bibtex).then(() => {
+      alert('BibTeX copied to clipboard!');
+    });
+  }
+  </script>
+  {{ end }}
+
+</article>
+
+{{ end }}
