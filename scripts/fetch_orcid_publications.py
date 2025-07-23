@@ -9,7 +9,7 @@ ORCID_ID = "0000-0002-7084-8774"
 API_URL = f"https://pub.orcid.org/v3.0/{ORCID_ID}/works"
 OUTPUT_DIR = "content/publication"
 
-# Map ORCID types to Hugo Blox publication_types
+# Map ORCID types to Hugo Blox numeric publication_types
 TYPE_MAP = {
     "journal-article": "2",
     "conference-paper": "1",
@@ -34,26 +34,32 @@ TYPE_TEXT_MAP = {
 }
 
 headers = {"Accept": "application/json"}
-response = requests.get(API_URL, headers=headers)
-data = response.json()
 
 def compute_hash(content: str) -> str:
+    """Generate hash to detect file changes"""
     return hashlib.md5(content.encode("utf-8")).hexdigest()
 
-def fetch_bibtex(doi: str) -> str:
-    """Fetch BibTeX from CrossRef if DOI exists."""
-    if not doi:
-        return ""
-    doi_url = f"https://api.crossref.org/works/{doi}/transform/application/x-bibtex"
-    r = requests.get(doi_url)
-    return r.text if r.status_code == 200 else ""
+def fetch_bibtex(doi: str, title: str, authors: list, year: str) -> str:
+    """Fetch BibTeX from CrossRef; fallback to minimal BibTeX if no DOI"""
+    if doi:
+        doi_url = f"https://api.crossref.org/works/{doi}/transform/application/x-bibtex"
+        r = requests.get(doi_url)
+        if r.status_code == 200:
+            return r.text
+    # Minimal fallback BibTeX
+    authors_str = " and ".join(authors) if authors else "Unknown"
+    return f"@article{{{slugify(title)}_{year},\n  title={{ {title} }},\n  author={{ {authors_str} }},\n  year={{ {year} }}\n}}"
+
+# Fetch works from ORCID
+response = requests.get(API_URL, headers=headers)
+data = response.json()
 
 updated_count = 0
 
 for work in data.get("group", []):
     summary = work["work-summary"][0]
 
-    # Metadata
+    # Title and type
     title = summary["title"]["title"]["value"]
     pub_type_code = TYPE_MAP.get(summary.get("type", "").lower(), "2")
     pub_type_text = TYPE_TEXT_MAP[pub_type_code]
@@ -90,7 +96,11 @@ for work in data.get("group", []):
     if not os.path.exists(pub_folder):
         os.makedirs(pub_folder)
 
-    # Markdown content
+    # Fetch BibTeX
+    bibtex_content = fetch_bibtex(doi, title, authors, year)
+    bibtex_escaped = bibtex_content.replace('"', '\\"').replace('\n', '\\n')
+
+    # Markdown content (index.md)
     md_content = f"""---
 title: "{title}"
 date: {year}-{month}-{day}
@@ -100,25 +110,25 @@ publication_type_name: "{pub_type_text}"
 authors: {json.dumps(authors)}
 publication: "{journal}"
 abstract: ""
+bibtex: "{bibtex_escaped}"
 ---
 """
 
-    # Write markdown (index.md)
     md_path = os.path.join(pub_folder, "index.md")
 
+    # Skip unchanged files
     if os.path.exists(md_path):
         with open(md_path, "r") as existing_file:
             if compute_hash(existing_file.read()) == compute_hash(md_content):
-                continue  # No changes
+                continue
 
+    # Write index.md
     with open(md_path, "w") as f:
         f.write(md_content)
 
-    # Fetch and write BibTeX file
-    bibtex_content = fetch_bibtex(doi) if doi else ""
-    if bibtex_content:
-        with open(os.path.join(pub_folder, "cite.bib"), "w") as f:
-            f.write(bibtex_content)
+    # Write cite.bib file (download option)
+    with open(os.path.join(pub_folder, "cite.bib"), "w") as f:
+        f.write(bibtex_content)
 
     updated_count += 1
 
