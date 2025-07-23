@@ -21,26 +21,43 @@ TYPE_MAP = {
     "patent": "8",
 }
 
+# Human-readable type names
+TYPE_TEXT_MAP = {
+    "1": "Conference paper",
+    "2": "Journal article",
+    "3": "Preprint",
+    "4": "Report",
+    "5": "Book",
+    "6": "Book section",
+    "7": "Thesis",
+    "8": "Patent",
+}
+
 headers = {"Accept": "application/json"}
 response = requests.get(API_URL, headers=headers)
 data = response.json()
 
-if not os.path.exists(OUTPUT_DIR):
-    os.makedirs(OUTPUT_DIR)
-
 def compute_hash(content: str) -> str:
-    """Generate a hash for the markdown content to detect changes."""
     return hashlib.md5(content.encode("utf-8")).hexdigest()
+
+def fetch_bibtex(doi: str) -> str:
+    """Fetch BibTeX from CrossRef if DOI exists."""
+    if not doi:
+        return ""
+    doi_url = f"https://api.crossref.org/works/{doi}/transform/application/x-bibtex"
+    r = requests.get(doi_url)
+    return r.text if r.status_code == 200 else ""
 
 updated_count = 0
 
 for work in data.get("group", []):
     summary = work["work-summary"][0]
 
-    # Basic metadata
+    # Metadata
     title = summary["title"]["title"]["value"]
-    pub_type = TYPE_MAP.get(summary.get("type", "").lower(), "2")
-    
+    pub_type_code = TYPE_MAP.get(summary.get("type", "").lower(), "2")
+    pub_type_text = TYPE_TEXT_MAP[pub_type_code]
+
     # Safe date handling
     pub_date = summary.get("publication-date") or {}
     year = (pub_date.get("year") or {}).get("value", "1900")
@@ -67,33 +84,42 @@ for work in data.get("group", []):
     journal_data = work_details.get("journal-title")
     journal = journal_data.get("value") if journal_data else ""
 
-    # Generate markdown
+    # Prepare directory structure (folder per publication)
+    folder_name = slugify(title)
+    pub_folder = os.path.join(OUTPUT_DIR, folder_name)
+    if not os.path.exists(pub_folder):
+        os.makedirs(pub_folder)
+
+    # Markdown content
     md_content = f"""---
 title: "{title}"
 date: {year}-{month}-{day}
 doi: "{doi if doi else ''}"
-publication_types: ["{pub_type}"]
+publication_types: ["{pub_type_code}"]
+publication_type_name: "{pub_type_text}"
 authors: {json.dumps(authors)}
 publication: "{journal}"
 abstract: ""
 ---
 """
 
-    # File path
-    filename = slugify(title)
-    filepath = f"{OUTPUT_DIR}/{filename}.md"
+    # Write markdown (index.md)
+    md_path = os.path.join(pub_folder, "index.md")
 
-    # Check if file exists and is unchanged
-    if os.path.exists(filepath):
-        with open(filepath, "r") as existing_file:
-            existing_hash = compute_hash(existing_file.read())
-            new_hash = compute_hash(md_content)
-            if existing_hash == new_hash:
-                continue  # No changes, skip writing
+    if os.path.exists(md_path):
+        with open(md_path, "r") as existing_file:
+            if compute_hash(existing_file.read()) == compute_hash(md_content):
+                continue  # No changes
 
-    # Write new/updated file
-    with open(filepath, "w") as f:
+    with open(md_path, "w") as f:
         f.write(md_content)
+
+    # Fetch and write BibTeX file
+    bibtex_content = fetch_bibtex(doi) if doi else ""
+    if bibtex_content:
+        with open(os.path.join(pub_folder, "cite.bib"), "w") as f:
+            f.write(bibtex_content)
+
     updated_count += 1
 
 print(f"Updated or added {updated_count} publications (others unchanged).")
