@@ -40,10 +40,12 @@ for work in data.get("group", []):
     # Basic metadata
     title = summary["title"]["title"]["value"]
     pub_type = TYPE_MAP.get(summary.get("type", "").lower(), "2")
-    pub_date = summary.get("publication-date", {})
-    year = pub_date.get("year", {}).get("value", "1900")
-    month = pub_date.get("month", {}).get("value", "01")
-    day = pub_date.get("day", {}).get("value", "01")
+    
+    # Safe date handling
+    pub_date = summary.get("publication-date") or {}
+    year = (pub_date.get("year") or {}).get("value", "1900")
+    month = (pub_date.get("month") or {}).get("value", "01")
+    day = (pub_date.get("day") or {}).get("value", "01")
 
     # DOI
     doi = None
@@ -56,7 +58,7 @@ for work in data.get("group", []):
     work_details = requests.get(work_url, headers=headers).json()
 
     authors = []
-    contributors = work_details.get("contributors", {}).get("contributor", [])
+    contributors = (work_details.get("contributors") or {}).get("contributor", [])
     for c in contributors:
         name = c.get("credit-name", {}).get("value")
         if name:
