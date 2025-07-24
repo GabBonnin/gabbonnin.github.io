@@ -1,4 +1,4 @@
-—
+---
 title: „SAVER: AI-Driven Speech Analysis in Psychotherapy“
 date: 2025-07-24
 tags:
@@ -7,7 +7,7 @@ tags:
   - Speech Analysis
   - Machine Learning
   - Mental Health
-—
+---
 
 ## Overview
 
