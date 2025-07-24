@@ -1,5 +1,5 @@
 ---
-title: „SAVER: AI-Driven Speech Analysis in Psychotherapy“
+title: SAVER: AI-Driven Speech Analysis in Psychotherapy
 date: 2025-07-24
 tags:
   - Psychotherapy
