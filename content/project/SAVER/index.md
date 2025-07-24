@@ -9,7 +9,7 @@ tags:
   - Mental Health
 ---
 
-## Overview
+## Overview:
 
 Psychotherapy unfolds through spoken dialogue, yet the language and acoustic patterns that shape these conversations are rarely studied in detail. Advances in natural language processing and speech analysis now allow researchers to examine these interactions more directly, offering new ways to understand how therapy works and why it helps.
 
