@@ -1,7 +1,7 @@
 ---
 title: Mental Health Evaluation through Text Analysis (META)
 date: 2025-07-24
-external_link: “https://gabbonnin.github.io/project/meta/”
+external_link: https://gabbonnin.github.io/project/meta/
 tags:
   - Natural Language Processing
   - Mental Health
