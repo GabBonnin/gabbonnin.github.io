@@ -9,26 +9,24 @@ ORCID_ID = "0000-0002-7084-8774"
 API_URL = f"https://pub.orcid.org/v3.0/{ORCID_ID}/works"
 OUTPUT_DIR = "content/publication"
 
-# Map ORCID types to Hugo Blox numeric and textual types
+# Map ORCID types to text form only
 TYPE_MAP = {
-    "journal-article": ("2", "Journal article"),
-    "conference-paper": ("1", "Conference paper"),
-    "book": ("5", "Book"),
-    "book-chapter": ("6", "Book section"),
-    "report": ("4", "Report"),
-    "thesis": ("7", "Thesis"),
-    "preprint": ("3", "Preprint"),
-    "patent": ("8", "Patent"),
+    "journal-article": "Journal article",
+    "conference-paper": "Conference paper",
+    "book": "Book",
+    "book-chapter": "Book section",
+    "report": "Report",
+    "thesis": "Thesis",
+    "preprint": "Preprint",
+    "patent": "Patent",
 }
 
 headers = {"Accept": "application/json"}
 
 def compute_hash(content: str) -> str:
-    """Generate hash to detect file changes."""
     return hashlib.md5(content.encode("utf-8")).hexdigest()
 
 def fetch_bibtex(doi, title, authors, year):
-    """Fetch BibTeX from CrossRef; fallback to minimal if no DOI exists."""
     if doi:
         doi_url = f"https://api.crossref.org/works/{doi}/transform/application/x-bibtex"
         r = requests.get(doi_url)
@@ -48,10 +46,9 @@ if not os.path.exists(OUTPUT_DIR):
 for work in data.get("group", []):
     summary = work["work-summary"][0]
 
-    # Basic metadata
+    # Title and type
     title = summary["title"]["title"]["value"]
-    type_key = summary.get("type", "").lower()
-    pub_type_code, pub_type_text = TYPE_MAP.get(type_key, ("2", "Journal article"))
+    pub_type_text = TYPE_MAP.get(summary.get("type", "").lower(), "Journal article")
 
     # Safe date handling
     pub_date = summary.get("publication-date") or {}
@@ -65,7 +62,7 @@ for work in data.get("group", []):
         if ext_id.get("external-id-type") == "doi":
             doi = ext_id.get("external-id-value")
 
-    # Fetch full details for contributors (authors & editors)
+    # Fetch full details for contributors
     work_url = f"https://pub.orcid.org/v3.0/{ORCID_ID}/work/{summary['put-code']}"
     work_details = requests.get(work_url, headers=headers).json()
 
@@ -97,13 +94,12 @@ for work in data.get("group", []):
     with open(os.path.join(pub_folder, "cite.bib"), "w") as f:
         f.write(bibtex_content)
 
-    # Markdown front matter for Hugo Blox
+    # Markdown front matter (text type)
     md_content = f"""---
 title: "{title}"
 date: {year}-{month}-{day}
 doi: "{doi if doi else ''}"
-publication_types: ["{pub_type_code}"]
-publication_type_name: "{pub_type_text}"
+publication_types: ["{pub_type_text}"]
 authors: {json.dumps(authors)}
 editors: {json.dumps(editors)}
 publication: "{journal}"
@@ -123,4 +119,4 @@ abstract: ""
     with open(md_path, "w") as f:
         f.write(md_content)
 
-print("Publications updated from ORCID (authors/editors separated, type text included).")
+print("Publications updated from ORCID (authors/editors separated, text type).")
