@@ -43,9 +43,10 @@ profiles:
     url: https://orcid.org/0000-0002-7084-8774
 
 interests:
-  - Diagnostics of Mental Disorders
+  - Classification of Mental Disorders
   - Long-term Effectiveness of Psychotherapy
   - Psychotherapy Research in Naturalistic Settings
+  - Natural Language Processing
 
 education:
   - area: PhD in Clinical Psychology
@@ -103,7 +104,7 @@ awards:
 
 ## About Me
 
-I am a postdoc at the Bochum-Marburg site of the German Center for Mental Health (DZPG), based at Ruhr University Bochum, where I lead the psychotherapy research group. Our work centers on multi-center studies exploring the long-term effects of psychotherapy and developing infrastructure for standardized data collection in routine psychotherapeutic care.
+I am a postdoc at the [Bochum-Marburg  site](https://www.dzpg.org/en/the-dzpg/partner-sites/bochum-marburg) of the [German Center for Mental Health (DZPG)](https://www.dzpg.org/en/), based at Ruhr University Bochum, where I lead the psychotherapy research group. Our work centers on multi-center studies exploring the long-term effects of psychotherapy and developing infrastructure for standardized data collection in routine psychotherapeutic care.
 
 My broader research interests lie in psychological assessment and psychotherapy processes. More recently, I have become increasingly engaged with natural language processing as a tool for assessing mental health and analyzing therapeutic interactions. 
 
