@@ -9,8 +9,6 @@ tags:
   - Mental Health
 ---
 
-## Overview:
-
 Psychotherapy unfolds through spoken dialogue, yet the language and acoustic patterns that shape these conversations are rarely studied in detail. Advances in natural language processing and speech analysis now allow researchers to examine these interactions more directly, offering new ways to understand how therapy works and why it helps.
 
 The SAVER project brings together several university clinics and research institutes within the German Center for Mental Health (DZPG) to build a unique multi-center database of psychotherapy sessions. Over the course of treatment, audio recordings of therapy will be combined with established diagnostic interviews and self-report measures. This combination makes it possible to study how features of spoken language — from the words used to tone and rhythm — relate to clinical symptoms, therapeutic techniques, and key processes such as motivation and alliance.
