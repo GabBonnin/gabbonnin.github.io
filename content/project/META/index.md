@@ -7,7 +7,7 @@ tags:
   - Assessment
 
 links:
-  - name: Manuscript
+  - name: Working manuscript (data preparation stage)
     url: https://gabbonnin.github.io/meta_manuscript/
 ---
 
