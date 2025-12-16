@@ -5,6 +5,10 @@ tags:
   - Natural Language Processing
   - Mental Health
   - Assessment
+
+links:
+  - name: Manuscript
+    url: https://gabbonnin.github.io/meta_manuscript/
 ---
 
 Psychotherapy is one of the most effective treatments for mental health problems, but its success depends on accurate diagnostic assessments. Current diagnostic tools often use standardized closed-ended scales that, while reliable, may fail to capture the complexity and individuality of mental states. This project leverages advances in artificial intelligence (AI) and natural language processing (NLP) to transform the way mental health is assessed.
