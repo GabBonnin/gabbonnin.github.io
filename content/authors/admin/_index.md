@@ -114,6 +114,6 @@ awards:
 
 I am a postdoc at the [Bochum-Marburg  site](https://www.dzpg.org/en/the-dzpg/partner-sites/bochum-marburg) of the [German Center for Mental Health (DZPG)](https://www.dzpg.org/en/), based at Ruhr University Bochum, where I lead the psychotherapy research group. Our work centers on multi-center studies exploring the long-term effects of psychotherapy and developing infrastructure for standardized data collection in routine psychotherapeutic care.
 
-Currently, I am on an international research stay as a Gateway Fellow at Lund University. During this fellowship, I investigate how patient-generated language can be leveraged for assessment, interpretation, and prognostic modeling in psychotherapy, using methods from artificial intelligence and natural language processing.
+Currently, I am on an international research stay as a Gateway Fellow at Lund University. During this fellowship, I investigate how patient-generated language can be leveraged for assessment, interpretation, and prognostic modeling in psychotherapy, using methods from artificial intelligence and natural language processing. [Here](https://gabbonnin.github.io/meta_manuscript/) you can find a living project documentation, which will be updated regularly. 
 
 In addition to my research activities, I am a licensed clinical psychologist and cognitive behavioral therapist.
