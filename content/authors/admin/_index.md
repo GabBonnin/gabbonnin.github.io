@@ -24,8 +24,8 @@ role: Postdoctoral Researcher
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Bochum-Marburg site of the German Center for Mental Health (DZPG)
-    url: https://dzpg.org/
+    - name: Lund University
+    url: https://www.lunduniversity.lu.se/
   - name: Ruhr University Bochum
     url: https://www.ruhr-uni-bochum.de/
 
@@ -66,15 +66,23 @@ education:
     summary: |
       Thesis: _"Physical activity and mood experience in daily life"_
 work:
+  - position: Gateway Fellow 
+    company_name: Lund University, Sweden
+    date_start: 2026-02-01
+    summary: |
+      - Lead of the psychotherapy research group at the Bochum-Marburg site.
+      - Conducting multi-centered research on long-term effects of psychotherapy.
+      - Developing infrastructure for harmonized data collection in routine psychotherapeutic care.
   - position: Research Associate
-    company_name: DZPG, Ruhr University Bochum
+    company_name: DZPG, Ruhr University Bochum, Germany
     date_start: 2023-01-01
+    date_end: 2026-01-31
     summary: |
       - Lead of the psychotherapy research group at the Bochum-Marburg site.
       - Conducting multi-centered research on long-term effects of psychotherapy.
       - Developing infrastructure for harmonized data collection in routine psychotherapeutic care.
   - position: Research Assistant
-    company_name: Ruhr University Bochum
+    company_name: Ruhr University Bochum, Germany
     date_start: 2020-01-01
     date_end: 2023-12-31
     summary: |
@@ -106,6 +114,6 @@ awards:
 
 I am a postdoc at the [Bochum-Marburg  site](https://www.dzpg.org/en/the-dzpg/partner-sites/bochum-marburg) of the [German Center for Mental Health (DZPG)](https://www.dzpg.org/en/), based at Ruhr University Bochum, where I lead the psychotherapy research group. Our work centers on multi-center studies exploring the long-term effects of psychotherapy and developing infrastructure for standardized data collection in routine psychotherapeutic care.
 
-My broader research interests lie in psychological assessment and psychotherapy processes. More recently, I have become increasingly engaged with natural language processing as a tool for assessing mental health and analyzing therapeutic interactions. 
+Currently, I am on an international research stay as a Gateway Fellow at Lund University. During this fellowship, I investigate how patient-generated language can be leveraged for assessment, interpretation, and prognostic modeling in psychotherapy, using methods from artificial intelligence and natural language processing.
 
 In addition to my research activities, I am a licensed clinical psychologist and cognitive behavioral therapist.
