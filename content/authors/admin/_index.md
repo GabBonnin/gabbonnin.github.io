@@ -24,7 +24,7 @@ role: Postdoctoral Researcher
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-    - name: Lund University
+  - name: Lund University
     url: https://www.lunduniversity.lu.se/
   - name: Ruhr University Bochum
     url: https://www.ruhr-uni-bochum.de/
