@@ -1,6 +1,6 @@
 ---
 title: "DISKO: Learning Diagnostic Skills online"
-date: 2025-07-24
+date: 2020-04-15
 tags:
   - Diagnostic Interviews
   - Mental Disorders

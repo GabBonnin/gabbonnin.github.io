@@ -1,6 +1,6 @@
 ---
 title: "Mechanisms of long-term effectiveness: sustainability of (transgenerational) psychotherapy"
-date: 2025-07-24
+date: 2023-08-01
 tags:
   - Psychotherapy
   - Long-term Effects of Psychotherapy 
