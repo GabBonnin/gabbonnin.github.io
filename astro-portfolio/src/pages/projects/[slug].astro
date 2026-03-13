@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(project => ({
+    params: { slug: project.slug },
+    props:  { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content }  = await project.render();
+
+const year = new Date(project.data.date).getFullYear();
+---
+
+<Layout title={project.data.title} description={project.data.description}>
+  <div class="max-w-3xl mx-auto px-6 pt-14 pb-20">
+
+    <!-- Back link -->
+    <a
+      href="/projects"
+      class="inline-flex items-center gap-1.5 text-xs text-zinc-400 dark:text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors mb-10"
+    >
+      <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
+      </svg>
+      Projects
+    </a>
+
+    <!-- Header -->
+    <header class="mb-10">
+      <div class="flex flex-wrap gap-1.5 mb-4">
+        {project.data.tags.map(tag => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+
+      <h1 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-50 tracking-tight leading-snug mb-3">
+        {project.data.title}
+      </h1>
+
+      <div class="flex items-center gap-3 text-xs text-zinc-400 dark:text-zinc-500">
+        <span class="font-mono tabular-nums">{year}</span>
+        {project.data.externalUrl && (
+          <>
+            <span>·</span>
+            <a
+              href={project.data.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors"
+            >
+              Project site
+              <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+              </svg>
+            </a>
+          </>
+        )}
+      </div>
+    </header>
+
+    <!-- Prose content -->
+    <div class="prose prose-sm prose-zinc dark:prose-invert max-w-none
+                prose-headings:font-semibold prose-headings:tracking-tight
+                prose-a:text-accent-600 dark:prose-a:text-accent-400
+                prose-a:no-underline hover:prose-a:underline
+                prose-code:font-mono prose-code:text-sm
+                prose-li:my-0.5">
+      <Content />
+    </div>
+
+  </div>
+</Layout>
