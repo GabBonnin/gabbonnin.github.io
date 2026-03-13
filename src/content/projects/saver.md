@@ -1,8 +1,8 @@
 ---
-title: "SAVER – AI-Driven Speech Analysis in Psychotherapy"
+title: "SAVER – Language analysis of psychotherapeutic treatment in a transdiagnostic context"
 date: "2025-10-01"
 tags: ["Psychotherapy", "Natural Language Processing", "Therapeutic Process", "Assessment", "DZPG"]
-description: "Multi-center database project across DZPG sites building a unique dataset of psychotherapy sessions. Combines audio recordings with diagnostic interviews and self-report measures to study relationships between language features and clinical outcomes."
+description: "Multi-center database project across DZPG sites building a unique dataset of psychotherapy session transcripts. Combines audio recordings with self-report measures to study relationships between language features, clinical outcomes and therapeutic processes."
 featured: true
 order: 3
 ---
