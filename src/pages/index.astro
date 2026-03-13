@@ -49,12 +49,14 @@ const education = [
     institution: 'Ruhr University Bochum',
     year: '2018',
     thesis: 'Neural correlates of in-situ exposure in panic disorder with agoraphobia',
+    grade: '1.0',
   },
   {
     degree: 'BSc in Psychology',
     institution: 'MLU Halle-Wittenberg',
     year: '2015',
     thesis: 'Physical activity and mood experience in daily life',
+    grade: '1.2',
   },
 ];
 
@@ -62,8 +64,7 @@ const awards = [
   {
     year: '2026',
     title: 'DZPG VISIONS Advanced Grant – POSIDONIA',
-    funder: 'DZPG',
-    role: 'Scientific Lead of consortium',
+    funder: 'BMFTR within the DZPG',
     total: '€1.2M',
     own: '€711,759',
   },
@@ -71,15 +72,13 @@ const awards = [
     year: '2025',
     title: 'Gateway Fellowship – META',
     funder: 'RUB Research School',
-    role: '9-month competitive fellowship for research stay abroad',
     total: '€43,903',
     own: null,
   },
   {
     year: '2025',
     title: 'DZPG VISIONS Grant – SAVER',
-    funder: 'DZPG',
-    role: 'Scientific Lead, Bochum–Marburg site',
+    funder: 'BMFTR within the DZPG',
     total: '€294,194',
     own: '€135,056',
   },
@@ -207,6 +206,7 @@ Currently, I am on an international research stay at Lund University, where I in
                 <span class="text-sm font-semibold text-zinc-900 dark:text-zinc-50">{edu.degree}</span>
                 <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500">{edu.year}</span>
                 {edu.note && <span class="text-xs text-zinc-400 dark:text-zinc-500 italic">{edu.note}</span>}
+                {edu.grade && <span class="text-xs text-zinc-400 dark:text-zinc-500">grade: {edu.grade}</span>}
               </div>
               <p class="text-sm text-zinc-500 dark:text-zinc-400">{edu.institution}</p>
               {edu.thesis && (
@@ -227,7 +227,7 @@ Currently, I am on an international research stay at Lund University, where I in
         <div>
           <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
             <span class="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Postgraduate training in Cognitive Behavioral Therapy</span>
-            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500">2019–2024</span>
+            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500">2024</span>
             <span class="text-xs text-zinc-400 dark:text-zinc-500 italic">grade: 1,3</span>
           </div>
           <p class="text-sm text-zinc-500 dark:text-zinc-400">Ruhr University Bochum</p>
@@ -239,7 +239,7 @@ Currently, I am on an international research stay at Lund University, where I in
     <!-- Right column: Awards & Contact -->
     <div class="space-y-10">
 
-      <!-- Awards -->
+      <!-- Funding -->
       <section>
         <h2 class="text-xs font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-4">
           Grants &amp; Third-Party Funding
@@ -257,7 +257,7 @@ Currently, I am on an international research stay at Lund University, where I in
                 </span>
                 {award.own && (
                   <span class="text-xs text-zinc-500 dark:text-zinc-400">
-                    My share: <span class="font-medium text-zinc-700 dark:text-zinc-300">{award.own}</span>
+                    Own share: <span class="font-medium text-zinc-700 dark:text-zinc-300">{award.own}</span>
                   </span>
                 )}
               </div>

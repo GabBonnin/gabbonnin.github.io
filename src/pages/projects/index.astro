@@ -8,6 +8,8 @@ const projects = allProjects.sort((a, b) => a.data.order - b.data.order);
 
 const featured = projects.filter(p => p.data.featured);
 const other    = projects.filter(p => !p.data.featured);
+
+const allTags = [...new Set(projects.flatMap(p => p.data.tags))].sort();
 ---
 
 <Layout
@@ -26,6 +28,20 @@ const other    = projects.filter(p => !p.data.featured);
         and AI/NLP applications in clinical psychology.
       </p>
     </header>
+
+    <!-- Tag filter bar -->
+    <div class="flex flex-wrap gap-2 mb-10" id="tag-filters">
+      <button
+        class="tag-btn active text-xs px-3 py-1 rounded-full border transition-colors border-zinc-300 dark:border-zinc-600 bg-zinc-900 dark:bg-zinc-50 text-zinc-50 dark:text-zinc-900"
+        data-tag="all"
+      >All</button>
+      {allTags.map(tag => (
+        <button
+          class="tag-btn text-xs px-3 py-1 rounded-full border transition-colors border-zinc-200 dark:border-zinc-700 text-zinc-500 dark:text-zinc-400 hover:border-zinc-400 dark:hover:border-zinc-500"
+          data-tag={tag.toLowerCase()}
+        >{tag}</button>
+      ))}
+    </div>
 
     <!-- Current / Featured projects -->
     {featured.length > 0 && (
@@ -73,3 +89,37 @@ const other    = projects.filter(p => !p.data.featured);
 
   </div>
 </Layout>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.tag-btn');
+  const cards   = document.querySelectorAll<HTMLElement>('article[data-tags]');
+  const sections = document.querySelectorAll<HTMLElement>('#tag-filters ~ section');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.dataset.tag ?? 'all';
+
+      // Update active button style
+      buttons.forEach(b => {
+        b.classList.remove('active', 'bg-zinc-900', 'dark:bg-zinc-50', 'text-zinc-50', 'dark:text-zinc-900', 'border-zinc-300', 'dark:border-zinc-600');
+        b.classList.add('text-zinc-500', 'dark:text-zinc-400', 'border-zinc-200', 'dark:border-zinc-700');
+      });
+      btn.classList.add('active', 'bg-zinc-900', 'dark:bg-zinc-50', 'text-zinc-50', 'dark:text-zinc-900', 'border-zinc-300', 'dark:border-zinc-600');
+      btn.classList.remove('text-zinc-500', 'dark:text-zinc-400', 'border-zinc-200', 'dark:border-zinc-700');
+
+      // Show/hide cards
+      cards.forEach(card => {
+        const cardTags = card.dataset.tags ?? '';
+        const show = tag === 'all' || cardTags.split(',').includes(tag);
+        card.style.display = show ? '' : 'none';
+      });
+
+      // Hide section headings if all cards in that section are hidden
+      sections.forEach(section => {
+        const visible = Array.from(section.querySelectorAll<HTMLElement>('article[data-tags]'))
+          .some(c => c.style.display !== 'none');
+        section.style.display = visible ? '' : 'none';
+      });
+    });
+  });
+</script>
