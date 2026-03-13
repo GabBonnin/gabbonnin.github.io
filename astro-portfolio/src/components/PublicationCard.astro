@@ -1,0 +1,99 @@
+---
+interface Props {
+  title: string;
+  authors: string;
+  year: number;
+  venue: string;
+  venueShort?: string;
+  type: 'journal' | 'book-chapter' | 'report' | 'thesis' | 'preprint';
+  doi?: string;
+  url?: string;
+  abstract?: string;
+}
+
+const { title, authors, year, venue, venueShort, type, doi, url, abstract } = Astro.props;
+
+const typeLabels: Record<Props['type'], string> = {
+  'journal':      'Journal Article',
+  'book-chapter': 'Book Chapter',
+  'report':       'Report',
+  'thesis':       'Dissertation',
+  'preprint':     'Preprint',
+};
+
+const typeColors: Record<Props['type'], string> = {
+  'journal':      'bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300 border-blue-200 dark:border-blue-800',
+  'book-chapter': 'bg-purple-50 text-purple-700 dark:bg-purple-900/20 dark:text-purple-300 border-purple-200 dark:border-purple-800',
+  'report':       'bg-amber-50 text-amber-700 dark:bg-amber-900/20 dark:text-amber-300 border-amber-200 dark:border-amber-800',
+  'thesis':       'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800',
+  'preprint':     'bg-rose-50 text-rose-700 dark:bg-rose-900/20 dark:text-rose-300 border-rose-200 dark:border-rose-800',
+};
+
+const externalHref = doi ? `https://doi.org/${doi}` : url;
+---
+
+<article class="card">
+  <div class="flex items-start justify-between gap-3 mb-3">
+    <div class="flex items-center gap-2 flex-wrap">
+      <span class={`inline-block text-xs font-medium px-2.5 py-1 rounded-full border ${typeColors[type]}`}>
+        {typeLabels[type]}
+      </span>
+      <span class="text-xs text-zinc-400 dark:text-zinc-500 font-mono tabular-nums">{year}</span>
+    </div>
+    {externalHref && (
+      <a
+        href={externalHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open publication"
+        class="text-zinc-400 dark:text-zinc-600 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors flex-shrink-0"
+      >
+        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+        </svg>
+      </a>
+    )}
+  </div>
+
+  <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-50 mb-1.5 leading-snug">
+    {externalHref
+      ? <a href={externalHref} target="_blank" rel="noopener noreferrer" class="hover:text-accent-600 dark:hover:text-accent-400 transition-colors">{title}</a>
+      : title
+    }
+  </h3>
+
+  <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-1 leading-relaxed">
+    {authors}
+  </p>
+
+  <p class="text-sm text-zinc-400 dark:text-zinc-500 italic mb-3">
+    {venueShort ?? venue}
+  </p>
+
+  {abstract && (
+    <details class="group">
+      <summary class="text-xs font-medium text-zinc-500 dark:text-zinc-400 cursor-pointer hover:text-zinc-700 dark:hover:text-zinc-200 list-none flex items-center gap-1">
+        <svg class="w-3 h-3 transition-transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+        </svg>
+        Abstract
+      </summary>
+      <p class="mt-3 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed border-l-2 border-zinc-200 dark:border-zinc-700 pl-4">
+        {abstract}
+      </p>
+    </details>
+  )}
+
+  {doi && (
+    <div class="mt-3 pt-3 border-t border-zinc-100 dark:border-zinc-800">
+      <a
+        href={`https://doi.org/${doi}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs font-mono text-zinc-400 dark:text-zinc-500 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
+      >
+        doi:{doi}
+      </a>
+    </div>
+  )}
+</article>
