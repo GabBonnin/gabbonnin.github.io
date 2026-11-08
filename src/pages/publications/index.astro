@@ -12,6 +12,7 @@ const grouped: Record<PubType, typeof publications> = {
   'report':       publications.filter(p => p.type === 'report'),
   'thesis':       publications.filter(p => p.type === 'thesis'),
   'preprint':     publications.filter(p => p.type === 'preprint'),
+  'conference':   publications.filter(p => p.type === 'conference'),
 };
 
 const sections: { type: PubType; label: string }[] = [
@@ -20,6 +21,7 @@ const sections: { type: PubType; label: string }[] = [
   { type: 'book-chapter', label: 'Book Chapters'     },
   { type: 'report',       label: 'Reports'           },
   { type: 'thesis',       label: 'Dissertation'      },
+  { type: 'conference',   label: 'Conference Proceedings' },
 ];
 ---
 

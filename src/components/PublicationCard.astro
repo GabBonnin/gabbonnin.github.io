@@ -5,7 +5,7 @@ interface Props {
   year: number;
   venue: string;
   venueShort?: string;
-  type: 'journal' | 'book-chapter' | 'report' | 'thesis' | 'preprint';
+  type: 'journal' | 'book-chapter' | 'report' | 'thesis' | 'preprint' | 'conference';
   doi?: string;
   url?: string;
   abstract?: string;
@@ -20,6 +20,7 @@ const typeLabels: Record<Props['type'], string> = {
   'report':       'Report',
   'thesis':       'Dissertation',
   'preprint':     'Preprint',
+  'conference':   'Conference',
 };
 
 const typeColors: Record<Props['type'], string> = {
@@ -28,6 +29,7 @@ const typeColors: Record<Props['type'], string> = {
   'report':       'bg-amber-50 text-amber-700 dark:bg-amber-900/20 dark:text-amber-300 border-amber-200 dark:border-amber-800',
   'thesis':       'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800',
   'preprint':     'bg-rose-50 text-rose-700 dark:bg-rose-900/20 dark:text-rose-300 border-rose-200 dark:border-rose-800',
+  'conference':   'bg-sky-50 text-sky-700 dark:bg-sky-900/20 dark:text-sky-300 border-sky-200 dark:border-sky-800',
 };
 
 const externalHref = doi ? `https://doi.org/${doi}` : url;

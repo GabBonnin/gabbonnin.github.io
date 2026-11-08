@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import bibtexParse from 'bibtex-parse';
 
-export type PubType = 'journal' | 'book-chapter' | 'report' | 'thesis' | 'preprint';
+export type PubType = 'journal' | 'book-chapter' | 'report' | 'thesis' | 'preprint' | 'conference';
 
 export interface Publication {
   id:          string;
@@ -26,6 +26,8 @@ function entryTypeToPublType(entryType: string): PubType {
     case 'inbook':        return 'book-chapter';
     case 'techreport':
     case 'report':        return 'report';
+    case 'inproceedings':
+    case 'conference':    return 'conference';
     case 'phdthesis':
     case 'mastersthesis':
     case 'thesis':        return 'thesis';
