@@ -16,6 +16,7 @@ export interface Publication {
   url?:        string;
   abstract?:   string;
   order:       number;
+  inPress:     boolean;
   bibtex:      string;
 }
 
@@ -98,8 +99,14 @@ export function getPublications(): Publication[] {
         url:         f.url,
         abstract:    f.abstract ? stripLatex(f.abstract) : undefined,
         order:       parseInt(f.order ?? '99', 10),
+        inPress:     /in press/i.test(f.note ?? ''),
         bibtex:      bibLines,
       } satisfies Publication;
     })
-    .sort((a: Publication, b: Publication) => a.order - b.order);
+    // Newest first; "in press" items lead, then by year (desc), then manual order
+    .sort((a: Publication, b: Publication) =>
+      Number(b.inPress) - Number(a.inPress) ||
+      b.year - a.year ||
+      a.order - b.order
+    );
 }

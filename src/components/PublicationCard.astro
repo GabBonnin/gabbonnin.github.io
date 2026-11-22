@@ -3,6 +3,7 @@ interface Props {
   title: string;
   authors: string;
   year: number;
+  inPress?: boolean;
   venue: string;
   venueShort?: string;
   type: 'journal' | 'book-chapter' | 'report' | 'thesis' | 'preprint' | 'conference';
@@ -12,7 +13,7 @@ interface Props {
   bibtex?: string;
 }
 
-const { title, authors, year, venue, venueShort, type, doi, url, abstract, bibtex } = Astro.props;
+const { title, authors, year, inPress, venue, venueShort, type, doi, url, abstract, bibtex } = Astro.props;
 
 const typeLabels: Record<Props['type'], string> = {
   'journal':      'Journal Article',
@@ -41,7 +42,7 @@ const externalHref = doi ? `https://doi.org/${doi}` : url;
       <span class={`inline-block text-xs font-medium px-2.5 py-1 rounded-full border ${typeColors[type]}`}>
         {typeLabels[type]}
       </span>
-      <span class="text-xs text-zinc-400 dark:text-zinc-500 font-mono tabular-nums">{year}</span>
+      <span class="text-xs text-zinc-400 dark:text-zinc-500 font-mono tabular-nums">{inPress ? 'in press' : year}</span>
     </div>
     {externalHref && (
       <a

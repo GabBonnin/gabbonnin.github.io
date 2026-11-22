@@ -2,18 +2,18 @@
 import Layout from '@/layouts/Layout.astro';
 
 const interests = [
-  'Psychotherapy Research in Naturalistic Settings',
-  'Long-term Effectiveness of Psychotherapy',
-  'Natural Language Processing',
-  'Classification of Mental Disorders',
+  'Diagnostics of mental disorders and psychological assessment',
+  'Clinical psychotherapy trials and long-term outcomes',
+  'Sustainable infrastructure for psychotherapy research in naturalistic settings',
+  'Natural language processing for mental health assessment and psychotherapy process research',
 ];
 
 const positions = [
   {
-    role: 'Postdoctoral Researcher',
+    role: 'Researcher',
     institution: 'Ruhr University Bochum · DZPG',
     location: 'Bochum, Germany',
-    period: 'Aug 2023 – present',
+    period: 'since 2023',
     description: 'Leading the psychotherapy research group at the Bochum–Marburg site of the German Center for Mental Health (DZPG), coordinating multi-center research on long-term psychotherapy outcomes and building infrastructure for standardized data collection in routine clinical practice.',
     current: true,
   },
@@ -21,7 +21,7 @@ const positions = [
     role: 'Gateway Fellow',
     institution: 'Lund University · Harmony Research Group (Dr. Oscar Kjell)',
     location: 'Lund, Sweden',
-    period: 'Feb 2026 – Oct 2026',
+    period: '2026',
     description: 'International research stay investigating patient-generated language for assessment, interpretation, and prognostic modeling in psychotherapy using AI and NLP.',
     current: false,
   },
@@ -60,11 +60,29 @@ const education = [
   },
 ];
 
+const clinical = [
+  {
+    title: 'State examination and license to practice as a psychotherapist (Cognitive Behavioral Therapy)',
+    institution: 'Germany',
+    year: '2024',
+  },
+  {
+    title: 'Postgraduate training in Cognitive Behavioral Therapy',
+    institution: 'Ruhr University Bochum, Germany',
+    year: '2019 – 2024',
+  },
+];
+
+const honors = [
+  { year: '2025', title: 'FBZ Open Science Award', note: 'For contributions to open science practices.' },
+];
+
 const awards = [
   {
     year: '2026',
     title: 'DZPG VISIONS Advanced Grant – POSIDONIA',
     funder: 'BMFTR within the DZPG',
+    role: 'Personalised Modular Psychotherapy for Individuals with Symptoms of Treatment-Resistant Depression. Scientific Lead of the consortium.',
     total: '€1.2M',
     own: '€711,759',
   },
@@ -72,6 +90,7 @@ const awards = [
     year: '2025',
     title: 'Gateway Fellowship – META',
     funder: 'RUB Research School',
+    role: 'Mental Health Evaluation through Text Analysis. 9-month competitive fellowship for a research stay abroad.',
     total: '€43,903',
     own: null,
   },
@@ -79,6 +98,7 @@ const awards = [
     year: '2025',
     title: 'DZPG VISIONS Grant – SAVER',
     funder: 'BMFTR within the DZPG',
+    role: 'Speech Analysis of Psychotherapeutic Treatment in a Transdiagnostic Setting. Scientific Lead of the Bochum–Marburg site.',
     total: '€294,194',
     own: '€135,056',
   },
@@ -110,11 +130,11 @@ const awards = [
           <span class="text-zinc-400 dark:text-zinc-500 font-normal">, PhD</span>
         </h1>
         <p class="text-base text-zinc-500 dark:text-zinc-400 mb-4">
-          Postdoctoral Researcher · German Center for Mental Health (DZPG), Ruhr University Bochum
+          Researcher · German Center for Mental Health (DZPG), Ruhr University Bochum
         </p>
 
         <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-2xl mb-6">
-          I am a postdoc at the Bochum-Marburg site of the German Center for Mental Health (DZPG), based at Ruhr University Bochum, where I lead the psychotherapy research group. Our work centers on multi-center studies exploring the long-term effects of psychotherapy and developing infrastructure for standardized data collection in routine psychotherapeutic care.
+          I am a researcher at the Bochum-Marburg site of the German Center for Mental Health (DZPG), based at Ruhr University Bochum, where I lead the psychotherapy research group. Our work centers on multi-center studies exploring the long-term effects of psychotherapy and developing infrastructure for standardized data collection in routine psychotherapeutic care.
 
 In 2026, I was a Gateway Fellow at Lund University (Harmony Research Group), where I investigated how patient-generated language can be used for assessment, interpretation, and prognostic modeling in psychotherapy, using methods from artificial intelligence and natural language processing. In addition to my research activities, I am a licensed clinical psychologist and cognitive behavioral therapist.
         </p>
@@ -224,13 +244,16 @@ In 2026, I was a Gateway Fellow at Lund University (Harmony Research Group), whe
         <h2 class="text-xs font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-4">
           Clinical Qualification
         </h2>
-        <div>
-          <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-            <span class="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Postgraduate training in Cognitive Behavioral Therapy</span>
-            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500">2024</span>
-            <span class="text-xs text-zinc-400 dark:text-zinc-500">grade: 1.3</span>
-          </div>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">Ruhr University Bochum</p>
+        <div class="space-y-5">
+          {clinical.map(c => (
+            <div>
+              <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                <span class="text-sm font-semibold text-zinc-900 dark:text-zinc-50">{c.title}</span>
+                <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500">{c.year}</span>
+              </div>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400">{c.institution}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -261,6 +284,22 @@ In 2026, I was a Gateway Fellow at Lund University (Harmony Research Group), whe
                   </span>
                 )}
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Awards -->
+      <section>
+        <h2 class="text-xs font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-4">
+          Awards &amp; Honors
+        </h2>
+        <div class="space-y-4">
+          {honors.map(h => (
+            <div class="border-l-2 border-zinc-200 dark:border-zinc-700 pl-3">
+              <p class="text-xs font-mono text-zinc-400 dark:text-zinc-500 tabular-nums">{h.year}</p>
+              <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200 leading-snug">{h.title}</p>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400">{h.note}</p>
             </div>
           ))}
         </div>
